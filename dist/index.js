@@ -1,5 +1,5 @@
 /*!
- * vt-lazyload-plugin v1.0.11
+ * vt-lazyload v1.0.11
  * (c) Rheimer van Dijk
  * Released under the MIT License.
  */

@@ -19,5 +19,9 @@
     "bili": "^4.8.1",
     "rollup-plugin-vue": "^5.1.4",
     "vue-template-compiler": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RheimerVanDijk/vue-lazyload.git"
   }
 }

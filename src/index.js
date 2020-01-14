@@ -2,11 +2,13 @@ export default {
   install(Vue, options) {
     let margin = '0px 0px 100px 0px'
     let fadeIn = false
+    let directive = 'lazyLoad'
     if(options) {
       margin = options.margin ?  options.margin : '0px 0px 100px 0px'
       fadeIn = options.fadeIn ? options.fadeIn : false
+      directive = options.directive ? options.directive : 'lazyLoad'
     }
-    Vue.directive('lazyLoad', (el, binding) => {
+    Vue.directive(directive, (el, binding) => {
       if(fadeIn) {
         el.style.opacity= '0'
         el.style.transition= `opacity ${fadeIn} ease`

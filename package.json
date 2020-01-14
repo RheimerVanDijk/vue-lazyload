@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "vt-lazyload",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "lazy load plugin",
   "keywords": [
     "lazyload",

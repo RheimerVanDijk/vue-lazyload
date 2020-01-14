@@ -41,9 +41,18 @@ with prob/variable:
 Vue.use(lazyLoad, {margin: '0px 0px 100px 0px'})
 ```
 
+### how to use the cssAnimate option:
+Find the animation you want on [animate.css](https://daneden.github.io/animate.css/)
+
+Add the animation in the animation array and add some options if you want. (The order of the array doesnt matter)
+```javascript
+<img v-lazyLoad="{ url: backgroundImage, animation: ['zoomInLeft', 'slower'] }" />
+```
+
 ### Options:
 |Option|Type|Default value|Description|
 | ---- | -- | ----------- | --------- |
 |margin|string|'0px 0px 100px 0px'|Sets the distance between the viewport and the image before it gets loaded|
 |fadeIn|string|'false'|If you want the images to fade in when scrolling by, set the value to any amount of seconds you want e.g. '1s'|
 |directive|string|lazyLoad|Use this option to change the directive name, if you change it to 'lazy' the directive name becomes v-lazy|
+|cssAnimate|boolean|false|Use Animate.css on your lazyload image|

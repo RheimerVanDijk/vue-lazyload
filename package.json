@@ -17,7 +17,8 @@
   "main": "dist/index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx bili --bundle-node-modules --format cjs-min"
+    "build": "npx bili --bundle-node-modules --format cjs-min",
+    "buildNormal": "npx bili --bundle-node-modules"
   },
   "author": "Rheimer van Dijk",
   "license": "MIT",

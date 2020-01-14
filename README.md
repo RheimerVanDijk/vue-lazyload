@@ -1,5 +1,7 @@
 # Lazyload plugin
-Really small lazyload plugin (<4kB)
+Really small lazyload plugin for vue (<4kB).
+
+If you have a idea for a new feature or option, add it to the Issues on my github repo. :)
 ## How to install:
 1. Install the package:
     ``` bash

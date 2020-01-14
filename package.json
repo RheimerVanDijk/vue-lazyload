@@ -7,7 +7,12 @@
     "lazyload",
     "vueJS",
     "nuxt",
-    "image lazyload"
+    "image lazyload",
+    "vue-lazyload",
+    "vue",
+    "vue-plugin",
+    "image",
+    "img"
   ],
   "main": "dist/index.js",
   "scripts": {

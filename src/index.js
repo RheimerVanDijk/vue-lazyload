@@ -20,7 +20,7 @@ export default {
     Vue.directive(directive, {bind(el, binding) {
       if(fadeIn) {
         el.style.opacity= '0'
-        el.style.transition= `opacity ${fadeIn} ease`
+        el.style.transition= `all ${fadeIn} ease`
       }
       const observer = new IntersectionObserver(
         (entries, observer) => {

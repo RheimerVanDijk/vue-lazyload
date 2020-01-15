@@ -1,10 +1,9 @@
 export default {
   install(Vue, options) {
-
     let margin = '0px 0px 100px 0px'
     let fadeIn = false
     let directive = 'lazyLoad'
-    if(options) {
+    if (options) {
       margin = options.margin ?  options.margin : '0px 0px 100px 0px'
       fadeIn = options.fadeIn ? options.fadeIn : false
       directive = options.directive ? options.directive : 'lazyLoad'
@@ -19,8 +18,8 @@ export default {
     }
     Vue.directive(directive, {bind(el, binding) {
       if(fadeIn) {
-        el.style.opacity= '0'
-        el.style.transition= `all ${fadeIn} ease`
+        el.style.opacity = '0'
+        el.style.transition = fadeIn
       }
       const observer = new IntersectionObserver(
         (entries, observer) => {
@@ -29,17 +28,12 @@ export default {
               if (binding.value.animation) {
                 el.src = binding.value.url
                 if(options.cssAnimate) {      
-                  el.classList.add('animated')
-                  binding.value.animation.forEach(className => {
-                    el.classList.add(className)
-                  });
+                  el.classList.add('animated', ...binding.value.animation)
                 }
               } else {
                 el.src = binding.value
               }
-
               fadeIn ? el.style.opacity= '1' : null
-   
               observer.unobserve(entry.target)
             }
           })
@@ -50,4 +44,3 @@ export default {
     }})
   }
 }
-

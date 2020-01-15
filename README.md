@@ -53,6 +53,6 @@ Add the animation in the animation array and add some options if you want. (The 
 |Option|Type|Default value|Description|
 | ---- | -- | ----------- | --------- |
 |margin|string|'0px 0px 100px 0px'|Sets the distance between the viewport and the image before it gets loaded|
-|fadeIn|string|'false'|If you want the images to fade in when scrolling by, set the value to any amount of seconds you want e.g. '1s'|
-|directive|string|lazyLoad|Use this option to change the directive name, if you change it to 'lazy' the directive name becomes v-lazy|
+|fadeIn|boolean|false|If you want the images to fade in when scrolling by, set the value to a css transition e.g. 'opacity 0.3s ease'|
+|directive|string|'lazyLoad'|Use this option to change the directive name, if you change it to 'lazy' the directive name becomes v-lazy|
 |cssAnimate|boolean|false|Use Animate.css on your lazyload image|

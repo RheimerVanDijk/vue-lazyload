@@ -2,7 +2,7 @@
   "private": false,
   "name": "vt-lazyload",
   "version": "1.1.1",
-  "description": "lazy load plugin",
+  "description": "Really small lazyload plugin for vue (<6kB).",
   "keywords": [
     "lazyload",
     "vueJS",
@@ -12,7 +12,8 @@
     "vue",
     "vue-plugin",
     "image",
-    "img"
+    "img",
+    "animate.css"
   ],
   "main": "dist/index.min.js",
   "scripts": {

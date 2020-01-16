@@ -1,14 +1,15 @@
-function urlCheck(url, errorImage) {
-  //checks if url exists and returns correct image or error image
-  const image = url;
-  const errorImg = errorImage;
-  let request = new XMLHttpRequest();
-  request.open("GET", image, false);
-  request.send();
-  if (request.status == 200) {
-    return image;
+function urlCheck(url, errorImage, el) {
+  // checks if url exists and puts url in src
+  if (errorImage) {
+    fetch(url).then(response => {
+      if (response.status == 200) {
+        el.src = url;
+      } else if (response.status == 404) {
+        el.src = errorImage;
+      }
+    });
   } else {
-    return errorImg;
+    el.src = url;
   }
 }
 
@@ -44,12 +45,12 @@ export default {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 if (binding.value.animation) {
-                  el.src = urlCheck(binding.value.url, errorLoadImage);
+                  urlCheck(binding.value.url, errorLoadImage, el);
                   if (options.cssAnimate) {
                     el.classList.add("animated", ...binding.value.animation);
                   }
                 } else {
-                  el.src = urlCheck(binding.value, errorLoadImage);
+                  urlCheck(binding.value, errorLoadImage, el);
                 }
                 fadeIn ? (el.style.opacity = "1") : null;
                 observer.unobserve(entry.target);

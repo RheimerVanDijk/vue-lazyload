@@ -1,10 +1,11 @@
-function urlCheck(url, errorImage, el) {
+function urlCheck(url, errorImage, el, className) {
   // checks if url exists and puts url in src
   if (errorImage) {
     fetch(url).then(response => {
       if (response.status == 200) {
         el.src = url;
-      } else if (response.status == 404) {
+      } else {
+        el.classList.add(className);
         el.src = errorImage;
       }
     });
@@ -19,11 +20,13 @@ export default {
     let fadeIn = false;
     let directive = "lazyLoad";
     let errorLoadImage = false;
+    let errorClass = "imageFailed";
     if (options) {
       margin = options.margin ? options.margin : "0px 0px 100px 0px";
       fadeIn = options.fadeIn ? options.fadeIn : false;
       directive = options.directive ? options.directive : "lazyLoad";
       errorLoadImage = options.errorImg ? options.errorImg : false;
+      errorClass = options.errorClass ? options.errorClass : "imageFailed";
       if (options.cssAnimate) {
         const animateCss = document.createElement("link");
         animateCss.rel = "text/css";
@@ -45,12 +48,12 @@ export default {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 if (binding.value.animation) {
-                  urlCheck(binding.value.url, errorLoadImage, el);
+                  urlCheck(binding.value.url, errorLoadImage, el, errorClass);
                   if (options.cssAnimate) {
                     el.classList.add("animated", ...binding.value.animation);
                   }
                 } else {
-                  urlCheck(binding.value, errorLoadImage, el);
+                  urlCheck(binding.value, errorLoadImage, el, errorClass);
                 }
                 fadeIn ? (el.style.opacity = "1") : null;
                 observer.unobserve(entry.target);

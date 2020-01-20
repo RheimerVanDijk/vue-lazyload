@@ -65,10 +65,11 @@ Vue.use(lazyLoad, { margin: "0px 0px 100px 0px" });
 
 ### Options:
 
-| Option     | Type    | Default value       | Description                                                                                                         |
-| ---------- | ------- | ------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| margin     | string  | '0px 0px 100px 0px' | Sets the distance between the viewport and the image before it gets loaded                                          |
-| fadeIn     | boolean | false               | If you want the images to fade in when scrolling by, set the value to a css transition e.g. 'opacity 0.3s ease'     |
-| directive  | string  | 'lazyLoad'          | Use this option to change the directive name, if you change it to 'lazy' the directive name becomes v-lazy          |
-| cssAnimate | boolean | false               | Use Animate.css on your lazyload image                                                                              |
-| errorImg   | string  | false               | Sets a placeholder image when image couldn't load, to use this function passtrough the url of the placeholder image |
+| Option     | Type    | Default value       | Description                                                                                                                                                    |
+| ---------- | ------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| margin     | string  | '0px 0px 100px 0px' | Sets the distance between the viewport and the image before it gets loaded                                                                                     |
+| fadeIn     | boolean | false               | If you want the images to fade in when scrolling by, set the value to a css transition e.g. 'opacity 0.3s ease'                                                |
+| directive  | string  | 'lazyLoad'          | Use this option to change the directive name, if you change it to 'lazy' the directive name becomes v-lazy                                                     |
+| cssAnimate | boolean | false               | Use Animate.css on your lazyload image                                                                                                                         |
+| errorImg   | string  | false               | Sets a placeholder image when image couldn't load, to use this function passtrough the url of the placeholder image                                            |
+| errorClass | string  | imageFailed         | This class name will be added to the image when it failed to load. Add errorClass with the class name you like to the options to change the default classname. |

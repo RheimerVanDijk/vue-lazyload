@@ -1,5 +1,9 @@
 # Lazyload plugin
 
+[![build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)](https://www.npmjs.com/package/vt-lazyload)
+[![npm version](https://img.shields.io/badge/npm-v1.1.6-blue?style=flat-square)](https://www.npmjs.com/package/vt-lazyload)
+[![license](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)](https://www.npmjs.com/package/vt-lazyload)
+
 Really small lazyload plugin for vue (<7kB).
 
 If you have a idea for a new feature or option, add it to the Issues on my github repo. :)

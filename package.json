@@ -2,7 +2,7 @@
   "private": false,
   "name": "vt-lazyload",
   "version": "1.1.6",
-  "description": "Really small lazyload plugin for vue (<6kB).",
+  "description": "Really small lazyload plugin for vue (<7kB).",
   "keywords": [
     "lazyload",
     "vueJS",

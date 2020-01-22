@@ -1,6 +1,6 @@
 # Lazyload plugin
 
-Really small lazyload plugin for vue (<6kB).
+Really small lazyload plugin for vue (<7kB).
 
 If you have a idea for a new feature or option, add it to the Issues on my github repo. :)
 

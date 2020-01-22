@@ -39,30 +39,38 @@ export default {
     }
     Vue.directive(directive, {
       bind(el, binding) {
-        if (fadeIn) {
-          el.style.opacity = "0";
-          el.style.transition = fadeIn;
-        }
-        const observer = new IntersectionObserver(
-          (entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                if (binding.value.animation) {
-                  urlCheck(binding.value.url, errorLoadImage, el, errorClass);
-                  if (options.cssAnimate) {
-                    el.classList.add("animated", ...binding.value.animation);
+        if (
+          "loading" in document.createElement("img") &&
+          options === undefined
+        ) {
+          el.src = binding.value;
+          el.setAttribute("loading", "lazy");
+        } else {
+          if (fadeIn) {
+            el.style.opacity = "0";
+            el.style.transition = fadeIn;
+          }
+          const observer = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  if (binding.value.animation) {
+                    urlCheck(binding.value.url, errorLoadImage, el, errorClass);
+                    if (options.cssAnimate) {
+                      el.classList.add("animated", ...binding.value.animation);
+                    }
+                  } else {
+                    urlCheck(binding.value, errorLoadImage, el, errorClass);
                   }
-                } else {
-                  urlCheck(binding.value, errorLoadImage, el, errorClass);
+                  fadeIn ? (el.style.opacity = "1") : null;
+                  observer.unobserve(entry.target);
                 }
-                fadeIn ? (el.style.opacity = "1") : null;
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { rootMargin: margin }
-        );
-        observer.observe(el);
+              });
+            },
+            { rootMargin: margin }
+          );
+          observer.observe(el);
+        }
       }
     });
   }

@@ -43,6 +43,12 @@ With prob/variable:
 <img v-lazyLoad="image.src" />
 ```
 
+## lazyloading:
+
+When using this plugin on a browser that supports native lazyloading, the plugin automaticly adds the necessary attributes and values to your element with the v-lazyload directive.
+
+**If you add options to the Vue.use() the native lazyloading won't be added to your element. Therefore the custom lazyload will be added to the element**
+
 ## Options:
 
 ### How to add a option:
@@ -51,16 +57,6 @@ With prob/variable:
 
 ```javascript
 Vue.use(lazyLoad, { margin: "0px 0px 100px 0px" });
-```
-
-### How to use the cssAnimate option:
-
-1. Find the animation you want on [animate.css](https://daneden.github.io/animate.css/)
-
-2. Add the animation in the animation array and add some options if you want. (The order of the array doesnt matter)
-
-```javascript
-<img v-lazyLoad="{ url: backgroundImage, animation: ['zoomInLeft', 'slower'] }" />
 ```
 
 ### Options:
@@ -73,3 +69,23 @@ Vue.use(lazyLoad, { margin: "0px 0px 100px 0px" });
 | cssAnimate | boolean | false               | Use Animate.css on your lazyload image                                                                                                                         |
 | errorImg   | string  | false               | Sets a placeholder image when image couldn't load, to use this function passtrough the url of the placeholder image                                            |
 | errorClass | string  | imageFailed         | This class name will be added to the image when it failed to load. Add errorClass with the class name you like to the options to change the default classname. |
+
+### Using multiple options:
+
+```javascript
+Vue.Use(lazyLoad, {
+  margin: "0px 0px 50px 0px",
+  errorImg:
+    "https://cdn.dribbble.com/users/1274627/screenshots/3390285/404-error-sad-boat-800x600.jpg"
+});
+```
+
+### How to use the cssAnimate option:
+
+1. Find the animation you want on [animate.css](https://daneden.github.io/animate.css/)
+
+2. Add the animation in the animation array and add some options if you want. (The order of the array doesnt matter)
+
+```javascript
+<img v-lazyLoad="{ url: backgroundImage, animation: ['zoomInLeft', 'slower'] }" />
+```
